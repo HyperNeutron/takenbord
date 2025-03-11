@@ -2,9 +2,7 @@
 <html lang="nl">
 <?php session_start() ?>
 
-<head>
-    <title>Takenbord</title>
-</head>
+<?php require_once "components/head.php" ?>
 
 <body>
     <h1>Takenbord</h1>
