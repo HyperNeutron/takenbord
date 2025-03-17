@@ -22,5 +22,6 @@
             <label for="task">Taak:</label><br>
             <textarea id="task" name="task" rows="4" cols="50"></textarea>
         </div>
+        <input type="submit" value="submit"></input>
     </form>
 </html>
