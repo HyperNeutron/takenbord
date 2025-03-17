@@ -22,7 +22,7 @@ if ($_POST["action"] == "register") {
 
     $_SESSION["user_id"] = $conn->lastInsertId();
 
-    header("location: ../index.php");
+    header("location: ../index.php?msg=account aangemaakt");
 }
 elseif ($_POST["action"] == "login"){
     $username = $_POST["username"];
