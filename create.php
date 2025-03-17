@@ -4,13 +4,14 @@
 <?php require_once "components/head.php" ?>
 <?php require_once "components/header.php" ?>
 
-    <form action="controllers/taskcontroller.php" method="POST">
-        <div class="formgroup">
-            <label for="title">Titel</label><br>
-        </div>
-        <div class="formgroup">
-            <input type="text" id="title" name="title"><br>
-        </div>
+<body>
+    <a href="edittask.php">Verander Bestaande ticket</a>
+
+    <form action="controllers/taskcontroller.php" method="post">
+        <input type="hidden" name="action" value="create">
+
+        <label for="title">Title:</label>
+        <input type="text" name="title" required>
         <div class="formgroup">
             <label for="department">Afdeling:</label><br>
         </div>
@@ -25,15 +26,18 @@
         <div class="formgroup">
             <label for="priority">prioritet level:</label><br>
             <select name="priority">
-                <option value="1">Low</option>
-                <option value="2" selected>Normal</option>
-                <option value="3">High</option>
+                <option value="1">Laag</option>
+                <option value="2" selected>Normaal</option>
+                <option value="3">Hoog</option>
             </select>
         </div>
         <div class="formgroup">
-            <label for="description">Taak:</label><br>
-            <textarea id="description" name="description" rows="4" cols="50"></textarea>
-        </div>
-        <input type="submit" value="submit"></input>
+        <label for="description">Description:</label>
+        <textarea name="description"></textarea>
+
+        <button type="submit">Submit</button>
+</form>
     </form>
+</body>
+
 </html>
