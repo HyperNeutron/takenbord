@@ -6,3 +6,70 @@
 nav{
     background-color: blue;
 }
+.formGroupTask {
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.formGroupTask label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.formGroupTask input,
+.formGroupTask select,
+.formGroupTask textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formGroupTask input:focus,
+.formGroupTask select:focus,
+.formGroupTask textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.formGroupTask textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.formGroupTask button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.formGroupTask button:hover {
+    background-color: #0056b3;
+}
+
+.formGroupTask button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.TaskDelete{
+    background-color: #ff0000;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
