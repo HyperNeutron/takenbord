@@ -17,7 +17,7 @@ require_once "components/head.php";
             <input type="text" name="email" id="email">
         </div>
         <div class="formgroup">
-            <label for="wachtworod">wachtwoord</label>
+            <label for="password">wachtwoord</label>
             <input type="password" name="password" id="password">
         </div>
         <input type="submit" value="sturen">
