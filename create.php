@@ -1,5 +1,8 @@
 <!doctype html>
 <html lang="nl">
+    
+<?php require_once "components/head.php" ?>
+
     <form action="controllers/taskcontroller.php" method="POST">
         <div class="formgroup">
             <label for="title">Titel</label><br>

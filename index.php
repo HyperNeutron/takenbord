@@ -6,6 +6,7 @@
 
 <body>
     <h1>Takenbord</h1>
+    <?php print_r($_SESSION) ?>
     <div>
         <a href="login.php">inloggen</a>
         <a href="create.php">Nieuwe Ticket</a>
