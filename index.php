@@ -10,6 +10,9 @@
         <a href="login.php">inloggen</a>
         <a href="create.php">Nieuwe Ticket</a>
     </div>
+    <div>
+        <p><?php if(isset($_GET["msg"])){ echo $_GET["msg"];} ?></p>
+    </div>
 </body>
 
 </html>
