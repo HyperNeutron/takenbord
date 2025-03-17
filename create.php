@@ -1,7 +1,8 @@
 <!doctype html>
 <html lang="nl">
-    
+
 <?php require_once "components/head.php" ?>
+<?php require_once "components/header.php" ?>
 
     <form action="controllers/taskcontroller.php" method="POST">
         <div class="formgroup">

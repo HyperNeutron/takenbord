@@ -2,6 +2,7 @@
 <html lang="en">
 <?php session_start(); ?>
 <?php require_once "components/head.php"; ?>
+<?php require_once "components/header.php" ?>
 
 <body>
     <a href="register.php">registreren</a>
