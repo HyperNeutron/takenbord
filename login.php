@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-session_start();
-require_once "components/head.php";
-?>
+<?php session_start(); ?>
+<?php require_once "components/head.php"; ?>
 
 <body>
     <a href="register.php">registreren</a>

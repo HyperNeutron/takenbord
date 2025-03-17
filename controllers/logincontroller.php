@@ -14,15 +14,18 @@ if ($_POST["action"] == "register") {
 
     $statement = $conn->prepare($query); 
 
-    $statement->execute([
+    if(!$statement->execute([
         ":username" => $username,
         ":password" => $password,
         ":email" => $email,
-    ]);
+    ])){
+        header("location: ../register.php?msg=gebruikersnaam is al gebruikt");
+        die();
+    }
 
     $_SESSION["user_id"] = $conn->lastInsertId();
 
-    header("location: ../index.php");
+    header("location: ../index.php?msg=account aangemaakt");
 }
 elseif ($_POST["action"] == "login"){
     $username = $_POST["username"];

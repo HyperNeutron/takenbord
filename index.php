@@ -6,9 +6,17 @@
 
 <body>
     <h1>Takenbord</h1>
+    <?php print_r($_SESSION) ?>
     <div>
         <a href="login.php">inloggen</a>
         <a href="create.php">Nieuwe Ticket</a>
+    </div>
+    <div>
+        <p>
+            <?php if (isset($_GET["msg"])) {
+                echo $_GET["msg"];
+            } ?>
+        </p>
     </div>
 </body>
 

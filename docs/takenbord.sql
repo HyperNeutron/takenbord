@@ -81,6 +81,10 @@ ALTER TABLE `tasks`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
+
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
