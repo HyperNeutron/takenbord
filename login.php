@@ -6,6 +6,7 @@ require_once "components/head.php";
 ?>
 
 <body>
+    <a href="register.php">registreren</a>
 <form action="controllers/logincontroller.php" method="post">
         <input type="hidden" name="action" value="login">
         <div class="formgroup">
