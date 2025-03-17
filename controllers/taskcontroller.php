@@ -2,14 +2,14 @@
 require_once '../config/conn.php';
 
 $action = isset($_POST['action']) ? $_POST['action'] : '';
-// Handle Create
+
+// Dit gaat over de creatie van een melding
 if ($action == "create") {
     $title = isset($_POST['title']) ? $_POST['title'] : '';
     $description = isset($_POST['description']) ? $_POST['description'] : '';
     $department = isset($_POST['department']) ? $_POST['department'] : '';
     $priority = isset($_POST['priority']) ? (int) $_POST['priority'] : 2;
     
-    // Always set status to "TODO" for new tasks
     $status = "TODO";
 
     if (empty($title) || empty($description)) {
@@ -35,7 +35,7 @@ if ($action == "create") {
     }
 }
 
-// Handle Edit (Update)
+// Dit gaat over het veranderen van een melding
 if ($action == "edit") {
     $id = isset($_POST['id']) ? (int) $_POST['id'] : 0;
     $title = isset($_POST['title']) ? $_POST['title'] : '';
@@ -67,7 +67,7 @@ if ($action == "edit") {
     }
 }
 
-// Handle Delete
+// Dit gaat over het verwijderen van een melding
 if ($action == "delete") {
     $id = isset($_POST['id']) ? (int) $_POST['id'] : 0;
 
@@ -89,5 +89,5 @@ if ($action == "delete") {
     }
 }
 
-// If no valid action is given
+// Dit is voor als er iets niet goed ging
 die("Ongeldige actie!");

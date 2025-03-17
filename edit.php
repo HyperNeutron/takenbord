@@ -6,15 +6,13 @@ if (!isset($_GET['id']) || empty($_GET['id'])) {
     die("Ongeldige taak-ID!");
 }
 
-$id = (int)$_GET['id']; // Convert to integer for security
+$id = (int)$_GET['id'];
 
-// Fetch the task from the database
 $query = "SELECT * FROM tasks WHERE id = :id";
 $statement = $conn->prepare($query);
 $statement->execute([":id" => $id]);
 $task = $statement->fetch(PDO::FETCH_ASSOC);
 
-// If no task is found
 if (!$task) {
     die("Taak niet gevonden!");
 }
@@ -56,8 +54,8 @@ if (!$task) {
 
         <label for="status">Status:</label>
         <select name="status">
-            <option value="TODO" <?= ($task['status'] == 'TODO') ? 'selected' : '' ?>>TODO</option>
-            <option value="In Progress" <?= ($task['status'] == 'In Progress') ? 'selected' : '' ?>>Bezig</option>
+            <option value="To do" <?= ($task['status'] == 'Todo') ? 'selected' : '' ?>>TODO</option>
+            <option value="Doing" <?= ($task['status'] == 'Doing') ? 'selected' : '' ?>>Bezig</option>
             <option value="Done" <?= ($task['status'] == 'Done') ? 'selected' : '' ?>>Klaar</option>
         </select>
 
