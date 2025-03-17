@@ -5,7 +5,7 @@
 <?php require_once "components/header.php" ?>
 
 <body>
-    <d action="controllers/taskcontroller.php" method="post">
+    <form action="controllers/taskcontroller.php" method="post">
         <input type="hidden" name="action" value="create">
         <div class="formGroupTask">
             <label for="title">Title:</label>
