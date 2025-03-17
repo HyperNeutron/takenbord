@@ -2,9 +2,8 @@
 <html lang="nl">
 <?php 
 session_start(); 
-require_once 'config/conn.php'; // Connect to database
+require_once 'config/conn.php';
 
-// Fetch tasks from the database
 $query = "SELECT * FROM tasks ORDER BY id DESC";
 $statement = $conn->prepare($query);
 $statement->execute();
@@ -27,6 +26,7 @@ $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
             <th>Afdeling</th>
             <th>Prioriteit</th>
             <th>Taak</th>
+            <th>Status</th>
             <th>Acties</th>
         </tr>
         <?php if (!empty($tasks)): ?>
@@ -36,6 +36,7 @@ $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
                     <td><?php echo htmlspecialchars($task['department']); ?></td>
                     <td><?php echo htmlspecialchars($task['priority']); ?></td>
                     <td><?php echo htmlspecialchars($task['description']); ?></td>
+                    <td><?php echo htmlspecialchars($task['status']); ?></td>
                     <td>
                         <a href="edit.php?id=<?php echo $task['id']; ?>">Verander Ticket</a>
                     </td>
