@@ -1,7 +1,7 @@
 <?php
 require_once 'config/conn.php';
 
-// Check if 'id' is in the URL
+// Kijkt of de ID in de link zit.
 if (!isset($_GET['id']) || empty($_GET['id'])) {
     die("Ongeldige taak-ID!");
 }
