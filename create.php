@@ -22,8 +22,12 @@
             </select>
         </div>
         <div class="formgroup">
-            <input type="checkbox" id="priority" name="priority" checked />
-            <label for="priority">Is dit een prioritet?</label>
+            <label for="priority">prioritet level:</label><br>
+            <select name="priority">
+                <option value="1">Low</option>
+                <option value="2" selected>Normal</option>
+                <option value="3">High</option>
+            </select>
         </div>
         <div class="formgroup">
             <label for="description">Taak:</label><br>

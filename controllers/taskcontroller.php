@@ -2,8 +2,9 @@
 $title = isset($_POST['title']) ? $_POST['title'] : '';
 $description = isset($_POST['description']) ? $_POST['description'] : '';
 $department = isset($_POST['department']) ? $_POST['department'] : '';
-$status = isset($_POST['status']) ? $_POST['status'] : 'TODO'; // Default status to 'TODO'
-$priority = isset($_POST['priority']) ? $_POST['priority'] : 'Normal'; // Default priority if not set
+$status = isset($_POST['status']) ? $_POST['status'] : 'TODO';
+$priority = isset($_POST['priority']) ? (int) $_POST['priority'] : 2;
+
 
 
 require_once '../config/conn.php';
