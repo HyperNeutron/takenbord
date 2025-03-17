@@ -19,6 +19,18 @@ if ($_POST["action"] == "register") {
         ":password" => $password,
         ":email" => $email,
     ]);
+
+    $query = "SELECT * FROM users WHERE :username = username"; 
+    $statement = $conn->prepare($query); 
+    $statement->execute([
+        ":username" => $username,
+    ]);
+
+    $user = $statement->fetch(PDO::FETCH_ASSOC);
+
+    $_SESSION["user_id"] = $user["id"];
+
+    header("location: ../index.php");
 }
 elseif ($_POST["action"] == "login"){
     $username = $_POST["username"];
