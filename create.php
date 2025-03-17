@@ -5,8 +5,6 @@
 <?php require_once "components/header.php" ?>
 
 <body>
-    <a href="edittask.php">Verander Bestaande ticket</a>
-
     <form action="controllers/taskcontroller.php" method="post">
         <input type="hidden" name="action" value="create">
 

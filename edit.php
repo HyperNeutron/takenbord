@@ -30,7 +30,7 @@ if (!$task) {
 <body>
     <h2>Taak Bewerken</h2>
 
-    <form action="taskcontroller.php" method="post">
+    <form action="controllers/taskcontroller.php" method="POST">
         <input type="hidden" name="action" value="edit">
         <input type="hidden" name="id" value="<?= htmlspecialchars($task['id']) ?>">
 
@@ -65,7 +65,7 @@ if (!$task) {
     </form>
 
     <h3>Taak Verwijderen</h3>
-    <form action="taskcontroller.php" method="post" onsubmit="return confirm('Weet je zeker dat je deze taak wilt verwijderen?');">
+    <form action="controllers/taskcontroller.php" method="POST" onsubmit="return confirm('Weet je zeker dat je deze taak wilt verwijderen?');">
         <input type="hidden" name="action" value="delete">
         <input type="hidden" name="id" value="<?= htmlspecialchars($task['id']) ?>">
         <button type="submit" style="background-color: red; color: white;">Verwijder</button>
