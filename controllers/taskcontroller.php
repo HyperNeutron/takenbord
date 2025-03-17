@@ -6,7 +6,8 @@ $status = isset($_POST['status']) ? $_POST['status'] : 'TODO'; // Default status
 $priority = isset($_POST['priority']) ? $_POST['priority'] : 'Normal'; // Default priority if not set
 
 
-require_once '/../config/conn.php';
+require_once '../config/conn.php';
+
 
 try {
     $query = "INSERT INTO tasks (title, description, priority, department, status) 
