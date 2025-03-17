@@ -7,7 +7,7 @@ require_once "components/head.php";
 
 <body>
     <a href="register.php">registreren</a>
-<form action="controllers/logincontroller.php" method="post">
+    <form action="controllers/logincontroller.php" method="post">
         <input type="hidden" name="action" value="login">
         <div class="formgroup">
             <label for="username">gebruikersnaam</label>
@@ -24,4 +24,5 @@ require_once "components/head.php";
         <input type="submit" value="sturen">
     </form>
 </body>
+
 </html>

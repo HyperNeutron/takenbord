@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php session_start() ?>
-<?php require_once "components/head.php"?>
+<?php require_once "components/head.php" ?>
 
 <body>
     <form action="controllers/logincontroller.php" method="post">
@@ -25,4 +25,5 @@
         <input type="submit" value="sturen">
     </form>
 </body>
+
 </html>
