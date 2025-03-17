@@ -20,15 +20,7 @@ if ($_POST["action"] == "register") {
         ":email" => $email,
     ]);
 
-    $query = "SELECT * FROM users WHERE :username = username"; 
-    $statement = $conn->prepare($query); 
-    $statement->execute([
-        ":username" => $username,
-    ]);
-
-    $user = $statement->fetch(PDO::FETCH_ASSOC);
-
-    $_SESSION["user_id"] = $user["id"];
+    $_SESSION["user_id"] = $conn->lastInsertId();
 
     header("location: ../index.php");
 }
