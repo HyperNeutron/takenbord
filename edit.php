@@ -22,73 +22,76 @@ if (!$task) {
 
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
-<?php require_once "components/head.php" ?>
+    <?php require_once "components/head.php" ?>
     <title>Taak Bewerken</title>
 </head>
+
 <body>
-<?php require_once "components/header.php" ?>
+    <?php require_once "components/header.php" ?>
     <div class="container">
-    <h2>Taak Bewerken</h2>
+        <h2>Taak Bewerken</h2>
 
-    <form action="controllers/taskcontroller.php" method="POST">
-        <input type="hidden" name="action" value="edit">
-        <div class="formGroupTask">
-            <input type="hidden" name="id" value="<?= htmlspecialchars($task['id']) ?>">
-        </div>
+        <form action="controllers/taskcontroller.php" method="POST">
+            <input type="hidden" name="action" value="edit">
+            <div class="formGroupTask">
+                <input type="hidden" name="id" value="<?= htmlspecialchars($task['id']) ?>">
+            </div>
 
-        <div class="formGroupTask">
-            <label for="title">Titel:</label>
-            <input type="text" name="title" value="<?= htmlspecialchars($task['title']) ?>" required>
-        </div>
+            <div class="formGroupTask">
+                <label for="title">Titel:</label>
+                <input type="text" name="title" value="<?= htmlspecialchars($task['title']) ?>" required>
+            </div>
 
-        <div class="formGroupTask">
-            <label for="description">Omschrijving:</label>
-            <textarea name="description"><?= htmlspecialchars($task['description']) ?></textarea>
-        </div>
+            <div class="formGroupTask">
+                <label for="description">Omschrijving:</label>
+                <textarea name="description"><?= htmlspecialchars($task['description']) ?></textarea>
+            </div>
 
-        <div class="formGroupTask">
-            <label for="department">Afdeling:</label>
-            <select name="department">
-                <option value="IT" <?= ($task['department'] == 'IT') ? 'selected' : '' ?>>IT</option>
-                <option value="HR" <?= ($task['department'] == 'HR') ? 'selected' : '' ?>>HR</option>
-                <option value="Finance" <?= ($task['department'] == 'Finance') ? 'selected' : '' ?>>Finance</option>
-            </select>
-        </div>
-        
-        <div class="formGroupTask">
-            <label for="priority">Prioriteit:</label>
-            <select name="priority">
-                <option value="1" <?= ($task['priority'] == 1) ? 'selected' : '' ?>>Hoog</option>
-                <option value="2" <?= ($task['priority'] == 2) ? 'selected' : '' ?>>Normaal</option>
-                <option value="3" <?= ($task['priority'] == 3) ? 'selected' : '' ?>>Laag</option>
-            </select>
-        </div>
+            <div class="formGroupTask">
+                <label for="department">Afdeling:</label>
+                <select name="department">
+                    <option value="IT" <?= ($task['department'] == 'IT') ? 'selected' : '' ?>>IT</option>
+                    <option value="HR" <?= ($task['department'] == 'HR') ? 'selected' : '' ?>>HR</option>
+                    <option value="Finance" <?= ($task['department'] == 'Finance') ? 'selected' : '' ?>>Finance</option>
+                </select>
+            </div>
 
-        <div class="formGroupTask">
-            <label for="status">Status:</label>
-            <select name="status">
-                <option value="To do" <?= ($task['status'] == 'Todo') ? 'selected' : '' ?>>TODO</option>
-                <option value="Doing" <?= ($task['status'] == 'Doing') ? 'selected' : '' ?>>Bezig</option>
-                <option value="Done" <?= ($task['status'] == 'Done') ? 'selected' : '' ?>>Klaar</option>
-            </select>
-        </div>
+            <div class="formGroupTask">
+                <label for="priority">Prioriteit:</label>
+                <select name="priority">
+                    <option value="1" <?= ($task['priority'] == 1) ? 'selected' : '' ?>>Hoog</option>
+                    <option value="2" <?= ($task['priority'] == 2) ? 'selected' : '' ?>>Normaal</option>
+                    <option value="3" <?= ($task['priority'] == 3) ? 'selected' : '' ?>>Laag</option>
+                </select>
+            </div>
 
-        <div class="formGroupTask">
-            <button type="submit">Opslaan</button>
-        </div>
-    </form>
+            <div class="formGroupTask">
+                <label for="status">Status:</label>
+                <select name="status">
+                    <option value="To do" <?= ($task['status'] == 'Todo') ? 'selected' : '' ?>>TODO</option>
+                    <option value="Doing" <?= ($task['status'] == 'Doing') ? 'selected' : '' ?>>Bezig</option>
+                    <option value="Done" <?= ($task['status'] == 'Done') ? 'selected' : '' ?>>Klaar</option>
+                </select>
+            </div>
 
-    <form action="controllers/taskcontroller.php" method="POST" onsubmit="return confirm('Weet je zeker dat je deze taak wilt verwijderen?');">
-        <div class="formGroupTask">
-            <input type="hidden" name="action" value="delete">
-            <input type="hidden" name="id" value="<?= htmlspecialchars($task['id']) ?>">
-            <button type="submit" style="background-color: red; color: white;">Verwijder</button>
-        </div>
-    </form>
+            <div class="formGroupTask">
+                <button type="submit">Opslaan</button>
+            </div>
+        </form>
 
-    <br>
-    <a href="index.php">Terug naar Takenlijst</a>
+        <form action="controllers/taskcontroller.php" method="POST" onsubmit="return confirm('Weet je zeker dat je deze taak wilt verwijderen?');">
+            <div class="formGroupTask">
+                <input type="hidden" name="action" value="delete">
+                <input type="hidden" name="id" value="<?= htmlspecialchars($task['id']) ?>">
+                <button type="submit" style="background-color: red; color: white;">Verwijder</button>
+            </div>
+        </form>
+
+        <br>
+        <a href="index.php">Terug naar Takenlijst</a>
     </div>
 </body>
+
 </html>
