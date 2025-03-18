@@ -1,7 +1,10 @@
 <!doctype html>
 <html lang="nl">
 
-<?php require_once "components/head.php" ?>
+<head>
+    <?php require_once "components/head.php" ?>
+    <title>Taak aanmaken</title>
+</head>
 
 <body>
     <?php require_once "components/header.php" ?>
