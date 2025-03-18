@@ -19,7 +19,7 @@ if ($_POST["action"] == "register") {
         ":password" => $password,
         ":email" => $email,
     ])){
-        header("location: ../register.php?msg=gebruikersnaam is al gebruikt");
+        header("location: ../register.php?msg=email is al gebruikt");
         exit;
     }
 
