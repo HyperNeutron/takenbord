@@ -10,8 +10,10 @@ $statement->execute();
 $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<?php require_once "components/head.php" ?>
-<?php require_once "components/header.php" ?>
+<head>
+    <?php require_once "components/head.php" ?>
+    <title>Takenbord</title>
+</head>
 
 <body>
     <?php require_once "components/header.php" ?>
