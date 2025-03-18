@@ -100,6 +100,7 @@ nav {
 
 .register, .login{
     background-color: #eeeeee;
+    margin-top: 1vh;
     padding: 1rem;
     border-radius: 0.2rem;
     width: 40vw;
