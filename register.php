@@ -10,6 +10,11 @@
 <body>
     <?php require_once "components/header.php" ?>
     <div class="container">
+        <?php if (isset($_GET["msg"])): ?>
+            <div class="error">
+                <?php echo $_GET["msg"]; ?>
+            </div>
+        <?php endif ?>
         <form action="controllers/logincontroller.php" method="post">
             <input type="hidden" name="action" value="register">
             <div class="formgroup">
