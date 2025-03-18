@@ -28,7 +28,7 @@
                 <label for="passwordcheck">herhaal wachtwoord</label>
                 <input type="password" name="passwordcheck" id="passwordcheck" required>
             </div>
-            <input type="submit" value="sturen">
+            <input type="submit" value="registreren">
         </form>
     </div>
 </body>
