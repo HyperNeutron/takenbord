@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php session_start(); ?>
-<?php require_once "components/head.php"; ?>
+
+<head>
+    <?php require_once "components/head.php"; ?>
+    <title>login</title>
+</head>
 
 <body>
     <?php require_once "components/header.php" ?>
-    
+
     <a href="register.php">registreren</a>
     <?php if (isset($_GET["msg"])): ?>
         <div class="error">
