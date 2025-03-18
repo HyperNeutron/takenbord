@@ -91,6 +91,10 @@ nav a{
 
 .error {
     background-color: #FFAAAA;
+    border-radius: 0.5em;
+    padding: 1%;
+    margin-bottom: 0.5%;
+    font-size: 1.2em;
     width: 20vw;
     animation: error 0.3s ease-in-out 2;
 }
