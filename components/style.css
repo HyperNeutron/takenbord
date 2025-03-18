@@ -9,9 +9,13 @@ a {
 }
 
 nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1vh 2vw;
     background-color: blue;
     color: white;
-    padding: 1vh;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .container{
