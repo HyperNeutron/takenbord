@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php session_start() ?>
-<?php require_once "components/head.php" ?>
+
+<head>
+    <?php require_once "components/head.php"; ?>
+    <title>registratie</title>
+</head>
 
 <body>
     <?php require_once "components/header.php" ?>
