@@ -78,19 +78,19 @@ nav {
 .error {
     background-color: #FFAAAA;
     width: 20vw;
-    animation: error 0.5s ease-in-out;
+    animation: error 0.3s ease-in-out 2;
 }
 
 @keyframes error {
     0% {
-        background-color: #FFAAAA;
+        filter: saturate(100%);
     }
 
     50% {
-        background-color: #ff0000;
+        filter: saturate(400%);
     }
 
     100% {
-        background-color: #FFAAAA;
+        filter: saturate(100%);
     }
 }
