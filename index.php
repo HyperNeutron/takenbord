@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="nl">
-<?php 
-session_start(); 
+<?php
+session_start();
 require_once 'config/conn.php';
 
 $query = "SELECT * FROM tasks ORDER BY id DESC";
@@ -10,10 +10,13 @@ $statement->execute();
 $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<?php require_once "components/head.php" ?>
+<head>
+    <?php require_once "components/head.php" ?>
+    <title>Takenbord</title>
+</head>
 
 <body>
-<?php require_once "components/header.php" ?>
+    <?php require_once "components/header.php" ?>
 
     <h1>Takenbord</h1>
     <div>
@@ -31,7 +34,7 @@ $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
             <th>Acties</th>
         </tr>
         <?php if (!empty($tasks)): ?>
-            <?php foreach($tasks as $task): ?>
+            <?php foreach ($tasks as $task): ?>
                 <tr>
                     <td><?php echo htmlspecialchars($task['title']); ?></td>
                     <td><?php echo htmlspecialchars($task['department']); ?></td>
@@ -58,4 +61,5 @@ $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
         </p>
     </div>
 </body>
+
 </html>
