@@ -3,9 +3,10 @@
     padding: 0;
 }
 
-nav{
+nav {
     background-color: blue;
 }
+
 .formGroupTask {
     gap: 10px;
     margin-bottom: 15px;
@@ -62,7 +63,7 @@ nav{
     cursor: not-allowed;
 }
 
-.TaskDelete{
+.TaskDelete {
     background-color: #ff0000;
     color: white;
     padding: 12px;
@@ -74,7 +75,7 @@ nav{
     transition: background 0.3s ease;
 }
 
-.error{
+.error {
     background-color: #FFAAAA;
     width: 20vw;
     animation: error 0.5s ease-in-out;
