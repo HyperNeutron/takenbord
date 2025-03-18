@@ -7,9 +7,8 @@
     <title>Nieuwe taak</title>
 </head>
 
-<?php require_once "components/header.php" ?>
-
 <body>
+    <?php require_once "components/header.php" ?>
     <form action="controllers/taskcontroller.php" method="post">
         <input type="hidden" name="action" value="create">
         <div class="formGroupTask">
