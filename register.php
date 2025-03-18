@@ -13,6 +13,7 @@
         <h1>Registreren</h1>
         <?php if (isset($_GET["msg"])): ?>
             <div class="error">
+                Kan account niet maken:<br>
                 <?php echo $_GET["msg"]; ?>
             </div>
         <?php endif ?>
