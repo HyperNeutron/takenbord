@@ -4,6 +4,19 @@ session_start();
 require_once "../config/conn.php";
 
 if ($_POST["action"] == "register") {
+    if(!isset($_POST["username"])) {
+        header("location: ../register.php?msg=gebruikersnaam is niet ingevuld");
+        exit;
+    }
+    if(!isset($_POST["password"])){
+        header("location: ../register.php?msg=wachtwoord is niet ingevuld");
+        exit;
+    }
+    if(!isset($_POST["email"])){
+        header("location: ../register.php?msg=email is niet ingevuld");
+        exit;
+    }
+
     $username = $_POST["username"];
     $password = $_POST["password"];
     $email = $_POST["email"];
@@ -28,6 +41,16 @@ if ($_POST["action"] == "register") {
     header("location: ../index.php?msg=account aangemaakt");
 }
 elseif ($_POST["action"] == "login"){
+
+    if(!isset($_POST["password"])){
+        header("location: ../register.php?msg=wachtwoord is niet ingevuld");
+        exit;
+    }
+    if(!isset($_POST["email"])){
+        header("location: ../register.php?msg=email is niet ingevuld");
+        exit;
+    }
+
     $email = $_POST["email"];
     $password = $_POST["password"];
 
