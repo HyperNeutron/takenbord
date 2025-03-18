@@ -8,7 +8,7 @@
 
 <body>
     <?php require_once "components/header.php" ?>
-
+    <div class="container">
     <form action="controllers/taskcontroller.php" method="post">
         <input type="hidden" name="action" value="create">
         <div class="formGroupTask">
@@ -44,6 +44,7 @@
             <button type="submit">Submit</button>
     </form>
     </form>
+    </div>
 </body>
 
 </html>

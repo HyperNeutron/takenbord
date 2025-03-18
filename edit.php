@@ -28,7 +28,7 @@ if (!$task) {
 </head>
 <body>
 <?php require_once "components/header.php" ?>
-
+    <div class="container">
     <h2>Taak Bewerken</h2>
 
     <form action="controllers/taskcontroller.php" method="POST">
@@ -89,5 +89,6 @@ if (!$task) {
 
     <br>
     <a href="index.php">Terug naar Takenlijst</a>
+    </div>
 </body>
 </html>

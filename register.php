@@ -9,7 +9,7 @@
 
 <body>
     <?php require_once "components/header.php" ?>
-
+    <div class="container">
     <form action="controllers/logincontroller.php" method="post">
         <input type="hidden" name="action" value="register">
         <div class="formgroup">
@@ -30,6 +30,7 @@
         </div>
         <input type="submit" value="sturen">
     </form>
+    </div>
 </body>
 
 </html>
