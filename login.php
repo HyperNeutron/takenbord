@@ -6,6 +6,11 @@
 
 <body>
     <a href="register.php">registreren</a>
+    <?php if (isset($_GET["msg"])): ?>
+        <div class="error">
+            <?php echo $_GET["msg"]; ?>
+        </div>
+    <?php endif ?>
     <form action="controllers/logincontroller.php" method="post">
         <input type="hidden" name="action" value="login">
         <div class="formgroup">
