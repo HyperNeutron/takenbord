@@ -1,8 +1,6 @@
 <div>
     <nav>
         <a href="index.php">Home</a>
-        <a href=""></a>
-        <a href=""></a>
         <?php if(isset($_SESSION["user_id"])): ?>
         <a href="logout.php">uitloggen</a>
         <?php else: ?>
