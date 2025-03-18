@@ -11,9 +11,15 @@
             <label for="title">Title:</label>
             <input type="text" name="title" required>
         </div>
-            <div class="formGroupTask">
-                <label for="department">Afdeling:</label><br>
-            </div>
+
+        <div class="formGroupTask">
+            <label for="user">gebruiker:</label>
+            <input type="user" name="user" required>
+        </div>
+
+        <div class="formGroupTask">
+            <label for="department">Afdeling:</label><br>
+        </div>
 
         <div class="formGroupTask">
             <select name="department" id="departments">

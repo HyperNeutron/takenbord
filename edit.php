@@ -43,6 +43,11 @@ if (!$task) {
         </div>
 
         <div class="formGroupTask">
+            <label for="user">gebruiker:</label>
+            <input type="user" name="user" value="<?= htmlspecialchars($task['user']) ?>" required>
+        </div>
+
+        <div class="formGroupTask">
             <label for="description">Omschrijving:</label>
             <textarea name="description"><?= htmlspecialchars($task['description']) ?></textarea>
         </div>
