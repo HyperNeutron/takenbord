@@ -2,9 +2,10 @@
 <html lang="en">
 <?php session_start() ?>
 <?php require_once "components/head.php" ?>
-<?php require_once "components/header.php" ?>
 
 <body>
+    <?php require_once "components/header.php" ?>
+
     <form action="controllers/logincontroller.php" method="post">
         <input type="hidden" name="action" value="register">
         <div class="formgroup">

@@ -11,9 +11,10 @@ $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <?php require_once "components/head.php" ?>
-<?php require_once "components/header.php" ?>
 
 <body>
+<?php require_once "components/header.php" ?>
+
     <h1>Takenbord</h1>
     <div>
         <a href="login.php">Inloggen |</a>

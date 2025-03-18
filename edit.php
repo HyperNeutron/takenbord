@@ -2,7 +2,6 @@
 require_once 'config/conn.php';
 
 require_once "components/head.php";
-require_once "components/header.php";
 
 // Kijkt of de ID in de link zit.
 if (!isset($_GET['id']) || empty($_GET['id'])) {
@@ -29,6 +28,8 @@ if (!$task) {
     <title>Taak Bewerken</title>
 </head>
 <body>
+<?php require_once "components/header.php" ?>
+
     <h2>Taak Bewerken</h2>
 
     <form action="controllers/taskcontroller.php" method="POST">

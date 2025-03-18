@@ -2,18 +2,19 @@
 <html lang="nl">
 
 <?php require_once "components/head.php" ?>
-<?php require_once "components/header.php" ?>
 
 <body>
+    <?php require_once "components/header.php" ?>
+
     <form action="controllers/taskcontroller.php" method="post">
         <input type="hidden" name="action" value="create">
         <div class="formGroupTask">
             <label for="title">Title:</label>
             <input type="text" name="title" required>
         </div>
-            <div class="formGroupTask">
-                <label for="department">Afdeling:</label><br>
-            </div>
+        <div class="formGroupTask">
+            <label for="department">Afdeling:</label><br>
+        </div>
 
         <div class="formGroupTask">
             <select name="department" id="departments">
@@ -34,11 +35,11 @@
         </div>
 
         <div class="formGroupTask">
-        <label for="description">Description:</label>
-        <textarea name="description"></textarea>
+            <label for="description">Description:</label>
+            <textarea name="description"></textarea>
 
-        <button type="submit">Submit</button>
-</form>
+            <button type="submit">Submit</button>
+    </form>
     </form>
 </body>
 
