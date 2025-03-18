@@ -5,15 +5,15 @@ require_once "../config/conn.php";
 
 if ($_POST["action"] == "register") {
     if(!isset($_POST["username"])) {
-        header("location: ../register.php?msg=gebruikersnaam is niet ingevuld");
+        header("location: ../register.php?msg=Gebruikersnaam is niet ingevuld");
         exit;
     }
     if(!isset($_POST["password"])){
-        header("location: ../register.php?msg=wachtwoord is niet ingevuld");
+        header("location: ../register.php?msg=Wachtwoord is niet ingevuld");
         exit;
     }
     if(!isset($_POST["email"])){
-        header("location: ../register.php?msg=email is niet ingevuld");
+        header("location: ../register.php?msg=Email is niet ingevuld");
         exit;
     }
 
@@ -32,7 +32,7 @@ if ($_POST["action"] == "register") {
         ":password" => $password,
         ":email" => $email,
     ])){
-        header("location: ../register.php?msg=email is al gebruikt");
+        header("location: ../register.php?msg=Email is al gebruikt");
         exit;
     }
 
@@ -43,11 +43,11 @@ if ($_POST["action"] == "register") {
 elseif ($_POST["action"] == "login"){
 
     if(!isset($_POST["password"])){
-        header("location: ../register.php?msg=wachtwoord is niet ingevuld");
+        header("location: ../register.php?msg=Wachtwoord is niet ingevuld");
         exit;
     }
     if(!isset($_POST["email"])){
-        header("location: ../register.php?msg=email is niet ingevuld");
+        header("location: ../register.php?msg=Email is niet ingevuld");
         exit;
     }
 
