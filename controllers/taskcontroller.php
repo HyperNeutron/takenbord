@@ -7,6 +7,7 @@ $action = isset($_POST['action']) ? $_POST['action'] : '';
 if ($action == "create") {
     $title = isset($_POST['title']) ? $_POST['title'] : '';
     $description = isset($_POST['description']) ? $_POST['description'] : '';
+    $user = isset($_POST['user']) ? $_POST['user'] : '';
     $department = isset($_POST['department']) ? $_POST['department'] : '';
     $priority = isset($_POST['priority']) ? (int) $_POST['priority'] : 2;
     
@@ -17,12 +18,13 @@ if ($action == "create") {
     }
 
     try {
-        $query = "INSERT INTO tasks (title, description, priority, department, status) 
-                  VALUES(:title, :description, :priority, :department, :status)";
+        $query = "INSERT INTO tasks (title, description, user, priority, department, status) 
+                  VALUES(:title, :description, :user, :priority, :department, :status)";
         $statement = $conn->prepare($query);
         $statement->execute([
             ":title" => $title,
             ":description" => $description,
+            ":user" => $user,
             ":priority" => $priority,
             ":department" => $department,
             ":status" => $status
@@ -40,6 +42,7 @@ if ($action == "edit") {
     $id = isset($_POST['id']) ? (int) $_POST['id'] : 0;
     $title = isset($_POST['title']) ? $_POST['title'] : '';
     $description = isset($_POST['description']) ? $_POST['description'] : '';
+    $user = isset($_POST['user']) ? $_POST['user'] : '';
     $department = isset($_POST['department']) ? $_POST['department'] : '';
     $status = isset($_POST['status']) ? $_POST['status'] : 'TODO';
     $priority = isset($_POST['priority']) ? (int) $_POST['priority'] : 2;
@@ -49,12 +52,13 @@ if ($action == "edit") {
     }
 
     try {
-        $query = "UPDATE tasks SET title = :title, description = :description, priority = :priority, department = :department, status = :status WHERE id = :id";
+        $query = "UPDATE tasks SET title = :title, description = :description, user = :user, priority = :priority, department = :department, status = :status WHERE id = :id";
         $statement = $conn->prepare($query);
         $statement->execute([
             ":id" => $id,
             ":title" => $title,
             ":description" => $description,
+            ":user" => $user,
             ":priority" => $priority,
             ":department" => $department,
             ":status" => $status
