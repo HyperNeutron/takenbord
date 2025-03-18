@@ -17,7 +17,7 @@
                 <?php echo $_GET["msg"]; ?>
             </div>
         <?php endif ?>
-        <form action="controllers/logincontroller.php" method="post">
+        <form action="controllers/logincontroller.php" method="post" class="register">
             <input type="hidden" name="action" value="register">
             <div class="formgroup">
                 <label for="username">gebruikersnaam</label>

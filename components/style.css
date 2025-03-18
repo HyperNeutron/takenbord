@@ -91,6 +91,20 @@ nav {
     transition: background 0.3s ease;
 }
 
+.formgroup{
+    display: flex;
+    justify-content: space-between;
+    width: 30vw;
+    margin-bottom: 1vh;
+}
+
+.register, .login{
+    background-color: #eeeeee;
+    padding: 1rem;
+    border-radius: 0.2rem;
+    width: 40vw;
+}
+
 .error {
     background-color: #FFAAAA;
     border-radius: 0.5em;
