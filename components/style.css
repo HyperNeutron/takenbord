@@ -92,10 +92,10 @@ nav a{
 .error {
     background-color: #FFAAAA;
     border-radius: 0.5em;
-    padding: 1%;
-    margin-bottom: 0.5%;
-    font-size: 1.2em;
-    width: 20vw;
+    padding: 0.5em;
+    margin: 0.5% 0;
+    font-size: 1.2rem;
+    width: 15vw;
     animation: error 0.3s ease-in-out 2;
 }
 
