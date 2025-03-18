@@ -1,9 +1,6 @@
 <?php
 require_once 'config/conn.php';
 
-require_once "components/head.php";
-require_once "components/header.php";
-
 // Kijkt of de ID in de link zit.
 if (!isset($_GET['id']) || empty($_GET['id'])) {
     die("Ongeldige taak-ID!");
@@ -30,6 +27,8 @@ if (!$task) {
 </head>
 
 <body>
+<?php require_once "components/header.php"; ?>
+
     <div class="container">
         <h2>Taak Bewerken</h2>
 
