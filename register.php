@@ -10,6 +10,7 @@
 <body>
     <?php require_once "components/header.php" ?>
     <div class="container">
+        <h1>Registreren</h1>
         <?php if (isset($_GET["msg"])): ?>
             <div class="error">
                 <?php echo $_GET["msg"]; ?>
