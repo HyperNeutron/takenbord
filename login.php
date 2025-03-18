@@ -19,14 +19,14 @@
         <form action="controllers/logincontroller.php" method="post">
             <input type="hidden" name="action" value="login">
             <div class="formgroup">
-                <label for="username">gebruikersnaam</label>
-                <input type="text" name="username" id="username">
+                <label for="email">e-mail</label>
+                <input type="text" name="email" id="email">
             </div>
             <div class="formgroup">
                 <label for="password">wachtwoord</label>
                 <input type="password" name="password" id="password">
             </div>
-            <input type="submit" value="sturen">
+            <input type="submit" value="inloggen">
         </form>
     </div>
 </body>
