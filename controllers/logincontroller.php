@@ -28,18 +28,18 @@ if ($_POST["action"] == "register") {
     header("location: ../index.php?msg=account aangemaakt");
 }
 elseif ($_POST["action"] == "login"){
-    $username = $_POST["username"];
+    $email = $_POST["email"];
     $password = $_POST["password"];
 
-    $query = "SELECT * FROM users WHERE username = :username"; 
+    $query = "SELECT * FROM users WHERE email = :email"; 
 
     $statement = $conn->prepare($query); 
     $statement->execute([
-        ":username" => $username,
+        ":email" => $email,
     ]);
 
     if ($statement->rowCount() < 1) {
-        header("location: ../login.php?msg=wachtwoord of gebruikersnaam incorrect");
+        header("location: ../login.php?msg=wachtwoord of email incorrect");
         exit;
     }
 
@@ -47,7 +47,7 @@ elseif ($_POST["action"] == "login"){
     
     if (!password_verify($password, $user['password'])) {
     
-        header("location: ../login.php?msg=wachtwoord of gebruikersnaam incorrect");
+        header("location: ../login.php?msg=wachtwoord of email incorrect");
         exit;
     }
 
