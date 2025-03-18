@@ -1,7 +1,12 @@
 <!doctype html>
 <html lang="nl">
 <?php session_start() ?>
-<?php require_once "components/head.php" ?>
+
+<head>
+    <?php require_once "components/head.php" ?>
+    <title>Nieuwe taak</title>
+</head>
+
 <?php require_once "components/header.php" ?>
 
 <body>
@@ -40,11 +45,11 @@
         </div>
 
         <div class="formGroupTask">
-        <label for="description">Description:</label>
-        <textarea name="description"></textarea>
+            <label for="description">Description:</label>
+            <textarea name="description"></textarea>
 
-        <button type="submit">Submit</button>
-</form>
+            <button type="submit">Submit</button>
+    </form>
     </form>
 </body>
 
