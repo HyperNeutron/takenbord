@@ -20,7 +20,7 @@ if ($_POST["action"] == "register") {
         ":email" => $email,
     ])){
         header("location: ../register.php?msg=gebruikersnaam is al gebruikt");
-        die();
+        exit;
     }
 
     $_SESSION["user_id"] = $conn->lastInsertId();
@@ -39,14 +39,16 @@ elseif ($_POST["action"] == "login"){
     ]);
 
     if ($statement->rowCount() < 1) {
-        die("Error: account bestaat niet");
+        header("location: ../login.php?msg=wachtwoord of gebruikersnaam incorrect");
+        exit;
     }
 
     $user = $statement->fetch(PDO::FETCH_ASSOC);
     
     if (!password_verify($password, $user['password'])) {
     
-        die("Error: wachtwoord niet juist!");
+        header("location: ../login.php?msg=wachtwoord of gebruikersnaam incorrect");
+        exit;
     }
 
     $_SESSION["user_id"] = $user["id"];
