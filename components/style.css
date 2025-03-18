@@ -7,6 +7,10 @@ nav {
     background-color: blue;
 }
 
+.container{
+    padding: 50px;
+}
+
 .formGroupTask {
     gap: 10px;
     margin-bottom: 15px;
