@@ -49,13 +49,6 @@ CREATE TABLE `tasks` (
   `status` enum('Todo','Doing','Done') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'Todo'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Dumping data for table `tasks`
---
-
-INSERT INTO `tasks` (`id`, `title`, `description`, `priority`, `department`, `status`) VALUES
-(2, 'Ty', 'Ty', 'High', 'IT', 'Todo');
-
 -- --------------------------------------------------------
 
 --
