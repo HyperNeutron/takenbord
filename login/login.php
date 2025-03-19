@@ -21,11 +21,11 @@
             <div class="formField">
                 <input type="hidden" name="action" value="login">
                 <div class="formgroup">
-                    <label for="email">e-mail</label>
+                    <label for="email">E-mail</label>
                     <input type="email" name="email" id="email" required>
                 </div>
                 <div class="formgroup">
-                    <label for="password">wachtwoord</label>
+                    <label for="password">Wachtwoord</label>
                     <input type="password" name="password" id="password" required>
                 </div>
             </div>
