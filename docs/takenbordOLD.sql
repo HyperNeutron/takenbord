@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 17, 2025 at 09:19 AM
+-- Generation Time: Mar 18, 2025 at 08:27 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -44,17 +44,11 @@ CREATE TABLE `tasks` (
   `id` int NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
+  `user` int NOT NULL,
   `priority` enum('Low','Normal','High') NOT NULL DEFAULT 'Normal',
   `department` varchar(255) NOT NULL,
   `status` enum('Todo','Doing','Done') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'Todo'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `tasks`
---
-
-INSERT INTO `tasks` (`id`, `title`, `description`, `priority`, `department`, `status`) VALUES
-(2, 'Ty', 'Ty', 'High', 'IT', 'Todo');
 
 -- --------------------------------------------------------
 
@@ -83,14 +77,15 @@ ALTER TABLE `departments`
 -- Indexes for table `tasks`
 --
 ALTER TABLE `tasks`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FkTasksUsers` (`user`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`);
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -106,13 +101,23 @@ ALTER TABLE `departments`
 -- AUTO_INCREMENT for table `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `tasks`
+--
+ALTER TABLE `tasks`
+  ADD CONSTRAINT `FkTasksUsers` FOREIGN KEY (`user`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
