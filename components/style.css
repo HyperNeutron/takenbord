@@ -100,14 +100,7 @@ nav {
     transition: background 0.3s ease;
 }
 
-.formgroup{
-    display: flex;
-    justify-content: space-between;
-    width: 30vw;
-    margin-bottom: 1vh;
-}
-
-.register, .login{
+.formField{
     background-color: #eeeeee;
     margin-top: 1vh;
     padding: 1rem;
@@ -115,13 +108,21 @@ nav {
     width: 40vw;
 }
 
+.formgroup{
+    display: flex;
+    justify-content: space-between;
+    width: 30vw;
+    margin-bottom: 1vh;
+}
+
 input[type="submit"]{
     background-color: var(--main-color);
     color: white;
-    padding: 0.3em;
-    font-size: 1.1rem;
+    padding: 0.6em 1em;
+    font-size: 1rem;
     border-radius: 0.3em;
     border: none;
+    margin: 1rem;
 }
 
 .error {

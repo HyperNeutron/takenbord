@@ -18,14 +18,16 @@
             </div>
         <?php endif ?>
         <form action="../controllers/logincontroller.php" method="post" class="login">
-            <input type="hidden" name="action" value="login">
-            <div class="formgroup">
-                <label for="email">e-mail</label>
-                <input type="email" name="email" id="email" required>
-            </div>
-            <div class="formgroup">
-                <label for="password">wachtwoord</label>
-                <input type="password" name="password" id="password" required>
+            <div class="formField">
+                <input type="hidden" name="action" value="login">
+                <div class="formgroup">
+                    <label for="email">e-mail</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div class="formgroup">
+                    <label for="password">wachtwoord</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
             </div>
             <input type="submit" value="inloggen">
         </form>
