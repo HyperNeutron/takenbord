@@ -1,16 +1,20 @@
 <!doctype html>
 <html lang="nl">
-<?php session_start() ?>
+<?php session_start();
 
+if (!(isset($_SESSION['user_id']) && $_SESSION['user_id'] != '')) {
+    header ("Location: ../login.php");
+}
+?>
 <head>
-    <?php require_once "components/head.php" ?>
+    <?php require_once "../components/head.php" ?>
     <title>Nieuwe taak</title>
 </head>
 
 <body>
-    <?php require_once "components/header.php" ?>
+    <?php require_once "../components/header.php" ?>
     <div class="container">
-        <form action="controllers/taskcontroller.php" method="post">
+        <form action="../controllers/taskcontroller.php" method="post">
             <input type="hidden" name="action" value="create">
             <div class="formGroupTask">
                 <label for="title">Titel:</label>
