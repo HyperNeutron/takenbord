@@ -118,8 +118,8 @@ nav {
 input[type="submit"]{
     background-color: var(--main-color);
     color: white;
-    padding: 0.3em;
-    font-size: 1.1rem;
+    padding: 0.6em 1em;
+    font-size: 0.9rem;
     border-radius: 0.3em;
     border: none;
 }
