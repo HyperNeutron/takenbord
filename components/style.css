@@ -1,3 +1,9 @@
+@property --maincolor{
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #2f80ed;
+}
+
 * {
     margin: 0;
     padding: 0;
