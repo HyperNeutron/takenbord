@@ -1,5 +1,5 @@
 <?php
-require_once 'config/conn.php';
+require_once '../config/conn.php';
 
 // Kijkt of de ID in de link zit.
 if (!isset($_GET['id']) || empty($_GET['id'])) {
@@ -22,12 +22,12 @@ if (!$task) {
 <html lang="nl">
 
 <head>
-    <?php require_once "components/head.php" ?>
+    <?php require_once "../components/head.php" ?>
     <title>Taak Bewerken</title>
 </head>
 
 <body>
-<?php require_once "components/header.php"; ?>
+<?php require_once "../components/header.php"; ?>
 
     <div class="container">
         <h2>Taak Bewerken</h2>
