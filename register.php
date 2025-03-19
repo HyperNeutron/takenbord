@@ -14,7 +14,7 @@
         <a href="login.php">Heb je al een account?</a>
         <?php if (isset($_GET["msg"])): ?>
             <div class="error">
-                Kan account niet maken:<br>
+                <b>Kan account niet maken:</b><br>
                 <?php echo $_GET["msg"]; ?>
             </div>
         <?php endif ?>
