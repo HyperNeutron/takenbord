@@ -44,7 +44,7 @@ $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
                         <td><?php echo htmlspecialchars($task['description']); ?></td>
                         <td><?php echo htmlspecialchars($task['status']); ?></td>
                         <td>
-                            <a href="edit.php?id=<?php echo $task['id']; ?>">Verander Ticket</a>
+                            <a href="tasks/edit.php?id=<?php echo $task['id']; ?>">Verander Ticket</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
