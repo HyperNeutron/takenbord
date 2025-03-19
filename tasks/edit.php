@@ -32,7 +32,7 @@ if (!$task) {
     <div class="container">
         <h2>Taak Bewerken</h2>
 
-        <form action="controllers/taskcontroller.php" method="POST">
+        <form action="../controllers/taskcontroller.php" method="POST">
             <input type="hidden" name="action" value="edit">
             <div class="formGroupTask">
                 <input type="hidden" name="id" value="<?= htmlspecialchars($task['id']) ?>">
@@ -54,11 +54,11 @@ if (!$task) {
             </div>
 
             <div class="formGroupTask">
-                <label for="department">Afdeling:</label>
-                <select name="department">
-                    <option value="IT" <?= ($task['department'] == 'IT') ? 'selected' : '' ?>>IT</option>
-                    <option value="HR" <?= ($task['department'] == 'HR') ? 'selected' : '' ?>>HR</option>
-                    <option value="Finance" <?= ($task['department'] == 'Finance') ? 'selected' : '' ?>>Finance</option>
+                <select name="department" id="departments">
+                    <option value="IT">IT</option>
+                    <option value="HR">Human Resources</option>
+                    <option value="Reception">Receptie</option>
+                    <option value="Skibidi">Skibidi department</option>
                 </select>
             </div>
 
@@ -94,7 +94,7 @@ if (!$task) {
         </form>
 
         <br>
-        <a href="index.php">Terug naar Takenlijst</a>
+        <a href="../index.php">Terug naar Takenlijst</a>
     </div>
 </body>
 
