@@ -20,7 +20,7 @@ $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
     <div class="container">
         <h1>Takenbord</h1>
         <div>
-            <a href="login.php">Inloggen |</a>
+            <a href="login/login.php">Inloggen |</a>
             <a href="tasks/create.php">Nieuwe Ticket</a>
         </div>
 
