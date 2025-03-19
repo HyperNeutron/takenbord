@@ -1,7 +1,5 @@
-@property --maincolor{
-    syntax: "<color>";
-    inherits: false;
-    initial-value: #2f80ed;
+html{
+    --main-color: #2f80ed;
 }
 
 * {
