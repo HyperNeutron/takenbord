@@ -11,7 +11,7 @@
     <?php require_once "../components/header.php" ?>
     <div class="container">
         <h1>Registreren</h1>
-        <a href="login.php">Heb je al een account?</a>
+        <a class="link" href="login.php">Heb je al een account?</a>
         <?php if (isset($_GET["msg"])): ?>
             <div class="error">
                 <b>Kan account niet maken:</b><br>

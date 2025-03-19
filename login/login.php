@@ -11,7 +11,7 @@
     <?php require_once "../components/header.php" ?>
     <div class="container">
         <h1>Inloggen</h1>
-        <a href="register.php">Nog geen account?</a>
+        <a class="link" href="register.php">Nog geen account?</a>
         <?php if (isset($_GET["msg"])): ?>
             <div class="error">
                 <?php echo $_GET["msg"]; ?>
