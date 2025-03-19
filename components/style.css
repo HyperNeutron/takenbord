@@ -106,6 +106,15 @@ nav {
     width: 40vw;
 }
 
+input[type="submit"]{
+    background-color: #2f80ed;
+    color: white;
+    padding: 0.3em;
+    font-size: 1.1rem;
+    border-radius: 0.3em;
+    border: none;
+}
+
 .error {
     background-color: #FFAAAA;
     border-radius: 0.5em;
