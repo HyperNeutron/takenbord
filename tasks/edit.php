@@ -1,5 +1,11 @@
 <?php
+session_start();
 require_once '../config/conn.php';
+
+
+if (!(isset($_SESSION['user_id']) && $_SESSION['user_id'] != '')) {
+    header ("Location: ../login/login.php?msg=Voor deze pagina moet je ingelogd zijn");
+}
 
 // Kijkt of de ID in de link zit.
 if (!isset($_GET['id']) || empty($_GET['id'])) {
