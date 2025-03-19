@@ -74,7 +74,7 @@ if (!$task) {
             <div class="formGroupTask">
                 <label for="status">Status:</label>
                 <select name="status">
-                    <option value="To do" <?= ($task['status'] == 'Todo') ? 'selected' : '' ?>>TODO</option>
+                    <option value="Todo" <?= ($task['status'] == 'Todo') ? 'selected' : '' ?>>To-do</option>
                     <option value="Doing" <?= ($task['status'] == 'Doing') ? 'selected' : '' ?>>Bezig</option>
                     <option value="Done" <?= ($task['status'] == 'Done') ? 'selected' : '' ?>>Klaar</option>
                 </select>

@@ -13,13 +13,8 @@
         <form action="controllers/taskcontroller.php" method="post">
             <input type="hidden" name="action" value="create">
             <div class="formGroupTask">
-                <label for="title">Title:</label>
+                <label for="title">Titel:</label>
                 <input type="text" name="title" required>
-            </div>
-
-            <div class="formGroupTask">
-                <label for="user">gebruiker:</label>
-                <input type="user" name="user" required>
             </div>
 
             <div class="formGroupTask">
@@ -30,13 +25,13 @@
                 <select name="department" id="departments">
                     <option value="IT">IT</option>
                     <option value="HR">Human Resources</option>
-                    <option value="Reception">Reception</option>
+                    <option value="Reception">Receptie</option>
                     <option value="Skibidi">Skibidi department</option>
                 </select>
             </div>
 
             <div class="formGroupTask">
-                <label for="priority">prioritet level:</label><br>
+                <label for="priority">Prioriteit:</label><br>
                 <select name="priority">
                     <option value="1">Laag</option>
                     <option value="2" selected>Normaal</option>
@@ -45,10 +40,10 @@
             </div>
 
             <div class="formGroupTask">
-                <label for="description">Description:</label>
+                <label for="description">beschrijving:</label>
                 <textarea name="description"></textarea>
 
-                <button type="submit">Submit</button>
+                <button type="submit">Stuur melding</button>
         </form>
         </form>
     </div>

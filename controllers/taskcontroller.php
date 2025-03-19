@@ -1,13 +1,16 @@
 <?php
+session_start();
+
 require_once '../config/conn.php';
 
 $action = isset($_POST['action']) ? $_POST['action'] : '';
+
 
 // Dit gaat over de creatie van een melding
 if ($action == "create") {
     $title = isset($_POST['title']) ? $_POST['title'] : '';
     $description = isset($_POST['description']) ? $_POST['description'] : '';
-    $user = isset($_POST['user']) ? $_POST['user'] : '';
+    $user = $_SESSION['user_id'];
     $department = isset($_POST['department']) ? $_POST['department'] : '';
     $priority = isset($_POST['priority']) ? (int) $_POST['priority'] : 2;
     
@@ -29,7 +32,6 @@ if ($action == "create") {
             ":department" => $department,
             ":status" => $status
         ]);
-
         header("Location: ../index.php?msg=Taak toegevoegd");
         exit();
     } catch (PDOException $e) {
@@ -42,7 +44,7 @@ if ($action == "edit") {
     $id = isset($_POST['id']) ? (int) $_POST['id'] : 0;
     $title = isset($_POST['title']) ? $_POST['title'] : '';
     $description = isset($_POST['description']) ? $_POST['description'] : '';
-    $user = isset($_POST['user']) ? $_POST['user'] : '';
+    $user = $_SESSION['user_id'];
     $department = isset($_POST['department']) ? $_POST['department'] : '';
     $status = isset($_POST['status']) ? $_POST['status'] : 'TODO';
     $priority = isset($_POST['priority']) ? (int) $_POST['priority'] : 2;
@@ -63,7 +65,6 @@ if ($action == "edit") {
             ":department" => $department,
             ":status" => $status
         ]);
-
         header("Location: ../index.php?msg=Bericht aangepast");
         exit();
     } catch (PDOException $e) {
