@@ -1,4 +1,4 @@
 <?php
 session_start();
 session_destroy();
-header("location: index.php?msg=uitgelogd");
+header("location: ../index.php?msg=uitgelogd");
