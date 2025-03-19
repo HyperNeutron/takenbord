@@ -22,19 +22,19 @@
             <div class="formField">
                 <input type="hidden" name="action" value="register">
                 <div class="formgroup">
-                    <label for="username">gebruikersnaam</label>
+                    <label for="username">Gebruikersnaam</label>
                     <input type="text" name="username" id="username" required>
                 </div>
                 <div class="formgroup">
-                    <label for="email">email</label>
+                    <label for="email">E-mail</label>
                     <input type="email" name="email" id="email" required>
                 </div>
                 <div class="formgroup">
-                    <label for="password">wachtwoord</label>
+                    <label for="password">Wachtwoord</label>
                     <input type="password" name="password" id="password" required>
                 </div>
                 <div class="formgroup">
-                    <label for="passwordcheck">herhaal wachtwoord</label>
+                    <label for="passwordcheck">Herhaal wachtwoord</label>
                     <input type="password" name="passwordcheck" id="passwordcheck" required>
                 </div>
             </div>
