@@ -2,6 +2,11 @@
 <html lang="nl">
 <?php
 session_start();
+
+if (!(isset($_SESSION['user_id']) && $_SESSION['user_id'] != '')) {
+    header ("Location: ../login/login.php?msg=Voor deze pagina moet je ingelogd zijn");
+}
+
 require_once 'config/conn.php';
 
 $query = "SELECT * FROM tasks ORDER BY id DESC";
