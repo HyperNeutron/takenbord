@@ -105,14 +105,22 @@ nav {
     margin-top: 1vh;
     padding: 1rem;
     border-radius: 0.2rem;
-    width: 40vw;
+    width: 35vw;
+    filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.3));
 }
 
 .formgroup{
     display: flex;
     justify-content: space-between;
-    width: 30vw;
+    width: 100%;
     margin-bottom: 1vh;
+}
+
+.formgroup input{
+    border: none;
+    filter: drop-shadow(1px 1px 0px rgba(0,0,0,0.3));
+    width: 20vw;
+    padding: 0.4em 0.5em;
 }
 
 input[type="submit"]{
