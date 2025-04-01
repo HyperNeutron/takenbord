@@ -29,7 +29,7 @@
                     <input type="password" name="password" id="password" required>
                 </div>
             </div>
-            <input type="submit" value="inloggen">
+            <input type="submit" value="Inloggen">
         </form>
     </div>
 </body>

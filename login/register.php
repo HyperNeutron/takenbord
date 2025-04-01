@@ -38,7 +38,7 @@
                     <input type="password" name="passwordcheck" id="passwordcheck" required>
                 </div>
             </div>
-            <input type="submit" value="registreren">
+            <input type="submit" value="Registreren">
         </form>
     </div>
 </body>
