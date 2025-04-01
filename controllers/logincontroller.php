@@ -12,6 +12,10 @@ if ($_POST["action"] == "register") {
         header("location: register.php?msg=Wachtwoord is niet ingevuld");
         exit;
     }
+    if($_POST["passwordcheck"] != $_POST["password"]){
+        header("location: register.php?msg=De wachtwoorden komen niet overeen.");
+        exit;
+    }
     if(empty($_POST["email"])){
         header("location: register.php?msg=Email is niet ingevuld");
         exit;
