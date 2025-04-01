@@ -11,13 +11,13 @@
     <?php require_once "../components/header.php" ?>
     <div class="container">
         <h1>Registreren</h1>
-        <a class="link" href="login.php">Heb je al een account?</a>
         <?php if (isset($_GET["msg"])): ?>
             <div class="error">
                 <b>Kan account niet aanmaken:</b><br>
                 <?php echo $_GET["msg"]; ?>
             </div>
         <?php endif ?>
+        <a class="link" href="login.php">Heb je al een account?</a>
         <form action="../controllers/logincontroller.php" method="post" class="register">
             <div class="formField">
                 <input type="hidden" name="action" value="register">
