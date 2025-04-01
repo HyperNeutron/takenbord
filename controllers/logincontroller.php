@@ -5,19 +5,19 @@ require_once "../config/conn.php";
 
 if ($_POST["action"] == "register") {
     if(empty($_POST["username"])) {
-        header("location: register.php?msg=Gebruikersnaam is niet ingevuld");
+        header("location: ../login/register.php?msg=Gebruikersnaam is niet ingevuld");
         exit;
     }
     if(empty($_POST["password"])){
-        header("location: register.php?msg=Wachtwoord is niet ingevuld");
+        header("location: ../login/register.php?msg=Wachtwoord is niet ingevuld");
         exit;
     }
     if($_POST["passwordcheck"] != $_POST["password"]){
-        header("location: register.php?msg=De wachtwoorden komen niet overeen.");
+        header("location: ../login/register.php?msg=De wachtwoorden komen niet overeen.");
         exit;
     }
     if(empty($_POST["email"])){
-        header("location: register.php?msg=Email is niet ingevuld");
+        header("location: ../login/register.php?msg=Email is niet ingevuld");
         exit;
     }
 
@@ -36,7 +36,7 @@ if ($_POST["action"] == "register") {
         ":password" => $password,
         ":email" => $email,
     ])){
-        header("location: register.php?msg=Email is al gebruikt");
+        header("location: ../login/register.php?msg=Email is al gebruikt");
         exit;
     }
 
@@ -47,11 +47,11 @@ if ($_POST["action"] == "register") {
 elseif ($_POST["action"] == "login"){
 
     if(empty($_POST["password"])){
-        header("location: register.php?msg=Wachtwoord is niet ingevuld");
+        header("location: ../login/login.php?msg=Wachtwoord is niet ingevuld");
         exit;
     }
     if(empty($_POST["email"])){
-        header("location: register.php?msg=Email is niet ingevuld");
+        header("location: ../login/login.php?msg=Email is niet ingevuld");
         exit;
     }
 
@@ -66,7 +66,7 @@ elseif ($_POST["action"] == "login"){
     ]);
 
     if ($statement->rowCount() < 1) {
-        header("location: login/login.php?msg=wachtwoord of email incorrect");
+        header("location: ../login/login.php?msg=wachtwoord of email incorrect");
         exit;
     }
 
@@ -74,7 +74,7 @@ elseif ($_POST["action"] == "login"){
     
     if (!password_verify($password, $user['password'])) {
     
-        header("location: login.php?msg=wachtwoord of email incorrect");
+        header("location: ../login.php?msg=wachtwoord of email incorrect");
         exit;
     }
 
