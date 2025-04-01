@@ -32,7 +32,7 @@ if ($action == "create") {
             ":department" => $department,
             ":status" => $status
         ]);
-        header("Location: ../index.php?msg=Taak toegevoegd");
+        header("Location: ../takenbord.php?msg=Taak toegevoegd");
         exit();
     } catch (PDOException $e) {
         die("Error: " . $e->getMessage());
@@ -65,7 +65,7 @@ if ($action == "edit") {
             ":department" => $department,
             ":status" => $status
         ]);
-        header("Location: ../index.php?msg=Bericht aangepast");
+        header("Location: ../takenbord.php?msg=Bericht aangepast");
         exit();
     } catch (PDOException $e) {
         die("Error: " . $e->getMessage());
