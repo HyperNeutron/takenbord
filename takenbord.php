@@ -11,10 +11,24 @@ require_once 'config/conn.php';
 
 $user_id = $_SESSION['user_id']; 
 
-$query = "SELECT * FROM tasks WHERE user = :user ORDER BY id DESC";
-$statement = $conn->prepare($query);
-$statement->execute([":user" => $user_id]);
+if(empty($_GET['filtering'])) {
+    $query = "SELECT * FROM tasks WHERE user = :user ORDER BY id DESC";
+    $statement = $conn->prepare($query);
+    $statement->execute([
+        ":user" => $user_id,
+    ]);
+} 
+else {
+    $query = "SELECT * FROM tasks WHERE user = :user AND `status` = :filtering ORDER BY id DESC";
+    $statement = $conn->prepare($query);
+    $statement->execute([
+        ":filtering" => $_GET['filtering'],
+        ":user" => $user_id,
+    ]);
+}
+
 $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <head>
@@ -28,6 +42,16 @@ $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
         <h1>Takenbord</h1>
         <div>
             <a class="link" href="tasks/create.php">Nieuwe Ticket</a>
+            <form method="GET">
+                <label for="filtering">Filter Status: </label>
+                <select name="filtering">
+                    <option value="">-</option>
+                    <option value="Todo">To-do</option>
+                    <option value="Doing">Bezig</option>
+                    <option value="Done">Klaar</option>
+                </select>
+                <input type="submit" value="filter">
+            </form>
         </div>
 
         <table border="1">
