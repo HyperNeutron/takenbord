@@ -58,7 +58,6 @@ $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
             <tr>
                 <th>Titel</th>
                 <th>Afdeling</th>
-                <th>gebruiker</th>
                 <th>Prioriteit</th>
                 <th>Taak</th>
                 <th>Status</th>
@@ -70,7 +69,6 @@ $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
                     <tr>
                         <td><?php echo htmlspecialchars($task['title']); ?></td>
                         <td><?php echo htmlspecialchars($task['department']); ?></td>
-                        <td><?php echo htmlspecialchars($task['user']); ?></td>
                         <td>
                             <?php 
                             // Vertaalt het naar nederlands (te lui om database aan te passen)
