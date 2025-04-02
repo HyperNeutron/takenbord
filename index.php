@@ -2,12 +2,6 @@
 <html lang="nl">
 <?php
 session_start();
-require_once 'config/conn.php';
-
-$query = "SELECT * FROM tasks ORDER BY id DESC";
-$statement = $conn->prepare($query);
-$statement->execute();
-$tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <head>
