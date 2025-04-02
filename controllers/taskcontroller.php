@@ -13,7 +13,8 @@ if ($action == "create") {
     $user = $_SESSION['user_id'];
     $department = isset($_POST['department']) ? $_POST['department'] : '';
     $priority = isset($_POST['priority']) ? (int) $_POST['priority'] : 2;
-    
+    $deadline = !empty($_POST['deadline']) ? $_POST['deadline'] : NULL;
+
     $status = "TODO";
 
     if (empty($title) || empty($description)) {
@@ -21,8 +22,8 @@ if ($action == "create") {
     }
 
     try {
-        $query = "INSERT INTO tasks (title, description, user, priority, department, status) 
-                  VALUES(:title, :description, :user, :priority, :department, :status)";
+        $query = "INSERT INTO tasks (title, description, user, priority, department, status, deadline) 
+        VALUES(:title, :description, :user, :priority, :department, :status, :deadline)";
         $statement = $conn->prepare($query);
         $statement->execute([
             ":title" => $title,
@@ -30,8 +31,11 @@ if ($action == "create") {
             ":user" => $user,
             ":priority" => $priority,
             ":department" => $department,
-            ":status" => $status
+            ":status" => $status,
+            ":deadline" => $deadline
         ]);
+        
+
         header("Location: ../takenbord.php?msg=Taak toegevoegd");
         exit();
     } catch (PDOException $e) {
@@ -47,14 +51,18 @@ if ($action == "edit") {
     $user = $_SESSION['user_id'];
     $department = isset($_POST['department']) ? $_POST['department'] : '';
     $status = isset($_POST['status']) ? $_POST['status'] : 'TODO';
-    $priority = isset($_POST['priority']) ? (int) $_POST['priority'] : 2;
+    $priority = isset($_POST['priority']) ? $_POST['priority'] : '2';
+    $deadline = isset($_POST['deadline']) ? $_POST['deadline'] : NULL;
 
-    if (empty($title) || empty($description)) {
+
+    if (empty($title) || empty($description)){
         die("Vul alle verplichte velden in!");
-    }
+    }    
 
     try {
-        $query = "UPDATE tasks SET title = :title, description = :description, user = :user, priority = :priority, department = :department, status = :status WHERE id = :id";
+        $query = "UPDATE tasks SET title = :title, description = :description, user = :user, 
+        priority = :priority, department = :department, status = :status, deadline = :deadline 
+        WHERE id = :id";
         $statement = $conn->prepare($query);
         $statement->execute([
             ":id" => $id,
@@ -63,8 +71,10 @@ if ($action == "edit") {
             ":user" => $user,
             ":priority" => $priority,
             ":department" => $department,
-            ":status" => $status
+            ":status" => $status,
+            ":deadline" => $deadline
         ]);
+        
         header("Location: ../takenbord.php?msg=Bericht aangepast");
         exit();
     } catch (PDOException $e) {

@@ -51,7 +51,7 @@ if (!$task) {
 
             <div class="formGroupTask">
                 <label for="user">gebruiker:</label>
-                <input type="user" name="user" value="<?= htmlspecialchars($task['user']) ?>" required>
+                <input type="hidden" name="user" value="<?= htmlspecialchars($task['user']) ?>" required>
             </div>
 
             <div class="formGroupTask">
@@ -78,6 +78,12 @@ if (!$task) {
             </div>
 
             <div class="formGroupTask">
+                <label for="deadline">Deadline:</label><br>
+                <input type="date" name="deadline" id="deadline" value="<?= htmlspecialchars($task['deadline']) ?>" required>
+            </div>
+
+
+            <div class="formGroupTask">
                 <label for="status">Status:</label>
                 <select name="status">
                     <option value="Todo" <?= ($task['status'] == 'Todo') ? 'selected' : '' ?>>To-do</option>
@@ -91,7 +97,7 @@ if (!$task) {
             </div>
         </form>
 
-        <form action="controllers/taskcontroller.php" method="POST" onsubmit="return confirm('Weet je zeker dat je deze taak wilt verwijderen?');">
+        <form action="../controllers/taskcontroller.php" method="POST" onsubmit="return confirm('Weet je zeker dat je deze taak wilt verwijderen?');">
             <div class="formGroupTask">
                 <input type="hidden" name="action" value="delete">
                 <input type="hidden" name="id" value="<?= htmlspecialchars($task['id']) ?>">

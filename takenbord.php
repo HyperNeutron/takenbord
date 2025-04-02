@@ -9,9 +9,11 @@ if (!(isset($_SESSION['user_id']) && $_SESSION['user_id'] != '')) {
 
 require_once 'config/conn.php';
 
-$query = "SELECT * FROM tasks ORDER BY id DESC";
+$user_id = $_SESSION['user_id']; 
+
+$query = "SELECT * FROM tasks WHERE user = :user ORDER BY id DESC";
 $statement = $conn->prepare($query);
-$statement->execute();
+$statement->execute([":user" => $user_id]);
 $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -36,7 +38,8 @@ $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
                 <th>Prioriteit</th>
                 <th>Taak</th>
                 <th>Status</th>
-                <th>Acties</th>
+                <th>deadline</th>
+                <th>Opties</th>
             </tr>
             <?php if (!empty($tasks)): ?>
                 <?php foreach ($tasks as $task): ?>
@@ -44,9 +47,40 @@ $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
                         <td><?php echo htmlspecialchars($task['title']); ?></td>
                         <td><?php echo htmlspecialchars($task['department']); ?></td>
                         <td><?php echo htmlspecialchars($task['user']); ?></td>
-                        <td><?php echo htmlspecialchars($task['priority']); ?></td>
+                        <td>
+                            <?php 
+                            // Vertaalt het naar nederlands (te lui om database aan te passen)
+                            $priorities = [
+                                'Low' => 'Laag',
+                                'Normal' => 'Normaal',
+                                'High' => 'Hoog'
+                            ];
+                            echo isset($priorities[$task['priority']]) ? $priorities[$task['priority']] : $task['priority'];
+                            ?>
+                        </td>
                         <td><?php echo htmlspecialchars($task['description']); ?></td>
-                        <td><?php echo htmlspecialchars($task['status']); ?></td>
+                        <td>
+                            <?php 
+                            // Zelfde verhaal
+                            $statuses = [
+                                'Todo' => 'Te doen',
+                                'Doing' => 'Bezig',
+                                'Done' => 'Klaar'
+                            ];
+                            echo isset($statuses[$task['status']]) ? $statuses[$task['status']] : $task['status'];
+                            ?>
+                        </td>
+                        <td style="color: <?php echo (!empty($task['deadline']) && strtotime($task['deadline']) < time()) ? 'red' : 'black'; ?>">
+                            <?php 
+                                echo !empty($task['deadline']) ? 
+                                    htmlspecialchars(date("d-m-Y", strtotime($task['deadline']))) : 
+                                    "Geen deadline"; 
+                            ?>
+                        </td>
+
+                        </td>
+
+
                         <td>
                             <a href="tasks/edit.php?id=<?php echo $task['id']; ?>">Verander Ticket</a>
                         </td>

@@ -44,10 +44,17 @@ if (!(isset($_SESSION['user_id']) && $_SESSION['user_id'] != '')) {
             </div>
 
             <div class="formGroupTask">
+                <label for="deadline">Deadline:</label><br>
+                <input type="date" name="deadline" required>
+            </div>
+
+
+            <div class="formGroupTask">
                 <label for="description">beschrijving:</label>
                 <textarea name="description"></textarea>
 
                 <button type="submit">Stuur melding</button>
+            </div>
         </form>
         </form>
     </div>
