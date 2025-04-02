@@ -1,11 +1,11 @@
-<!doctype html>
-<html lang="nl">
 <?php session_start();
 
 if (!(isset($_SESSION['user_id']) && $_SESSION['user_id'] != '')) {
     header ("Location: ../login/login.php?msg=Voor deze pagina moet je ingelogd zijn");
 }
 ?>
+<!doctype html>
+<html lang="nl">
 <head>
     <?php require_once "../components/head.php" ?>
     <title>Nieuwe taak</title>

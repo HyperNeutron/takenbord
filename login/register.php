@@ -1,6 +1,6 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
-<?php session_start() ?>
 
 <head>
     <?php require_once "../components/head.php"; ?>

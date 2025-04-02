@@ -1,8 +1,8 @@
-<!doctype html>
-<html lang="nl">
 <?php
 session_start();
 ?>
+<!doctype html>
+<html lang="nl">
 
 <head>
     <?php require_once "components/head.php" ?>

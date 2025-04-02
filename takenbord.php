@@ -1,5 +1,3 @@
-<!doctype html>
-<html lang="nl">
 <?php
 session_start();
 
@@ -30,6 +28,9 @@ else {
 $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
+
+<!doctype html>
+<html lang="nl">
 
 <head>
     <?php require_once "components/head.php" ?>
