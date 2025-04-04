@@ -105,14 +105,15 @@ nav {
     margin-top: 1vh;
     padding: 1rem;
     border-radius: 0.2rem;
-    width: 35vw;
+    width: 55vw;
+    max-width: 600px;
     box-shadow: 2px 2px 0px rgba(0,0,0,0.3);
     box-sizing: border-box;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 600px) {
     .formField {
-        width: 80vw;
+        width: 90vw;
     }
 }
 
@@ -128,7 +129,19 @@ nav {
     box-shadow: 1px 1px 0px rgba(0,0,0,0.3);
     width: 50%;
     max-width: 300px;
+    font-size: 5px + 2vw;
     padding: 0.4em 0.5em;
+}
+
+.formgroup label{
+    width: 50%;
+    font-size: 5px + 2vw;
+}
+
+@media only screen and (max-width: 600px) {
+    .formgroup {
+        font-size: 0.7rem;
+    }
 }
 
 input[type="submit"]{
