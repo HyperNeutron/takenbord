@@ -107,6 +107,13 @@ nav {
     border-radius: 0.2rem;
     width: 35vw;
     box-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 1000px) {
+    .formField {
+        width: 80vw;
+    }
 }
 
 .formgroup{
@@ -119,7 +126,8 @@ nav {
 .formgroup input{
     border: none;
     box-shadow: 1px 1px 0px rgba(0,0,0,0.3);
-    width: 20vw;
+    width: 50%;
+    max-width: 300px;
     padding: 0.4em 0.5em;
 }
 
