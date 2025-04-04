@@ -71,9 +71,9 @@ if (!$task) {
             <div class="formGroupTask">
                 <label for="priority">Prioriteit:</label>
                 <select name="priority">
-                    <option value="1" <?= ($task['priority'] == 1) ? 'selected' : '' ?>>Hoog</option>
+                    <option value="1" <?= ($task['priority'] == 1) ? 'selected' : '' ?>>Laag</option>
                     <option value="2" <?= ($task['priority'] == 2) ? 'selected' : '' ?>>Normaal</option>
-                    <option value="3" <?= ($task['priority'] == 3) ? 'selected' : '' ?>>Laag</option>
+                    <option value="3" <?= ($task['priority'] == 3) ? 'selected' : '' ?>>Hoog</option>
                 </select>
             </div>
 

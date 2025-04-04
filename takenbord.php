@@ -12,14 +12,14 @@ require_once 'config/conn.php';
 $user_id = $_SESSION['user_id']; 
 
 if(empty($_GET['filtering'])) {
-    $query = "SELECT * FROM tasks WHERE user = :user ORDER BY id DESC";
+    $query = "SELECT * FROM tasks WHERE user = :user ORDER BY deadline ASC";
     $statement = $conn->prepare($query);
     $statement->execute([
         ":user" => $user_id,
     ]);
 } 
 else {
-    $query = "SELECT * FROM tasks WHERE user = :user AND `status` = :filtering ORDER BY id DESC";
+    $query = "SELECT * FROM tasks WHERE user = :user AND `status` = :filtering ORDER BY deadline ASC";
     $statement = $conn->prepare($query);
     $statement->execute([
         ":filtering" => $_GET['filtering'],
@@ -33,6 +33,7 @@ $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 <head>
     <?php require_once "components/head.php" ?>
+    <link rel="stylesheet" href="components/table.css">
     <title>Takenbord</title>
 </head>
 
@@ -43,10 +44,10 @@ $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
         <div>
             <a class="link" href="tasks/create.php">Nieuwe Ticket</a>
             <form method="GET">
-                <label for="filtering">Filter Status: </label>
+                <label for="filtering">Filteren op Status: </label>
                 <select name="filtering">
                     <option value="">-</option>
-                    <option value="Todo">To-do</option>
+                    <option value="Todo">Te doen</option>
                     <option value="Doing">Bezig</option>
                     <option value="Done">Klaar</option>
                 </select>
@@ -104,7 +105,7 @@ $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 
                         <td>
-                            <a href="tasks/edit.php?id=<?php echo $task['id']; ?>">Verander Ticket</a>
+                            <a href="tasks/edit.php?id=<?php echo $task['id']; ?>">ticket aanpassen</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -114,7 +115,7 @@ $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
                 </tr>
             <?php endif; ?>
         </table>
-
+        <br>
         <div>
             <p>
                 <?php if (isset($_GET["msg"])) {
