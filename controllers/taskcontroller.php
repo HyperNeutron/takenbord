@@ -97,7 +97,7 @@ if ($action == "delete") {
             ":id" => $id
         ]);
 
-        header("Location: ../index.php?msg=Bericht verwijderd");
+        header("Location: ../takenbord.php?msg=Bericht verwijderd");
         exit();
     } catch (PDOException $e) {
         die("Error: " . $e->getMessage());
